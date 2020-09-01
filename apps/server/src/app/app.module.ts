@@ -1,7 +1,9 @@
 import { Module } from '@nestjs/common';
 
+import { PrismaModule } from '@crud-api/prisma';
+
 @Module({
-  imports: [],
+  imports: [PrismaModule],
   controllers: [],
   providers: [],
 })

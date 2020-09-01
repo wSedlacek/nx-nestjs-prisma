@@ -55,6 +55,32 @@
           }
         }
       }
+    },
+    "prisma": {
+      "root": "libs/prisma",
+      "sourceRoot": "libs/prisma/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/prisma/tsconfig.lib.json",
+              "libs/prisma/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/prisma/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/prisma/jest.config.js",
+            "tsConfig": "libs/prisma/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
